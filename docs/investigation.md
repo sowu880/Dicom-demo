@@ -1,6 +1,7 @@
+[[!TOC]]
 # Overview
 
-DICOM® — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
+[DICOM®](https://www.dicomstandard.org/) — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
 
 # Dicom Data Structure
 
@@ -22,7 +23,7 @@ DICOM® — Digital Imaging and Communications in Medicine — is the internatio
 |Data Element Tag|An ordered pair of 16-bit unsigned integers representing the Group Number followed by Element Number.|[All tags](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part06/chapter_6.html)|
 |Value Representation(VR)|Two single byte characters describes the data type and format of that Data Element's Value(s).|[All VRs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_6.2.html)|
 |Value Length|a 16 or 32-bit unsigned integer as the number of bytes (even) that make up the Value. a 32-bit Length Field set to Undefined Length (FFFFFFFFH) for SQ and UN or OW/OB somtimes.|
-|Value Field|An even number of bytes containing the Value(s) of the Data Element. The Value Multiplicity specifies how many Values with this VR can be placed in the Value Field.|[Nesting of Data Sets](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_7.5.html),  [Pixel Data and Overlay Data](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_8.html), [UIDs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_9.html)|
+|Value Field|An even number of bytes containing the Value(s) of the Data Element. The Value Multiplicity specifies how many Values with this VR can be placed in the Value Field.|[Nesting of Data Sets](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_7.5.html)<br>  [Pixel Data and Overlay Data](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_8.html)<br> [UIDs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_9.html)|
 
 ## Nesting of Data Sets
 
@@ -39,9 +40,9 @@ The VR identified "SQ" shall be used for Data Elements with a Value consisting o
 |Description| Redect values by tags. (default or customized )| De-id values by sensitive types.( built-in infotypes or customized) |Recognize Burnt-in text and scan sensitive data to Infotype.|
 |API Config|**DicomConfig:**<br>1. Keeplist.<br> 2. Removelist. <br>3. TagFilterProfile|**DicomConfig**: TagFilterProfile<br>**TextConfig**: transformations|**ImageConfig**: TextRedactionMode|
 |De-id method|redact|Primitive transformations (redact/ dateshift/ cryptohash/ mask/ replace)| opaque rectangle|
-|Algorithm||Infotype Detection. De-id algorithm|Infotype detection. Pixel data modify.|
+|Algorithm|De-id algorithm|Infotype Detection.<br> De-id algorithm|Burnt-in text detection. <br> Infotype detection. <br>Pixel data modify.|
 
-## Redact Dicom Tags
+## De-id By Dicom Tags
 
 ### Keeplist
 ```
@@ -140,8 +141,9 @@ A tag filter profile is a pre-defined profile that determines which tags to keep
 ||De-id By Dicom Tags or Dicom VRs| De-id By Sensitive Infotype| De-id Burnt-in text|
 |-----|-----|-----|-----|
 |Description| Redect values by tags or VRs. (default or customized )| De-id values by sensitive infotypes.( built-in infotypes or customized)|Recognize Burnt-in text and scan sensitive data to Infotype.|
+|API Config||||
 |De-id method|redact/ dateshift/ cryptohash/ perturb/ encrypt/ substitute/ generalize|redact/ dateshift/ cryptohash/ perturb/ encrypt/ substitute/ generalize| opaque rectangle|
-|Algorithm||Infotype Detection. De-id algorithm|Infotype detection. Pixel data modify.|
+|Algorithm|De-id algorithm|Infotype Detection. <br>De-id algorithm|Burnt-in text detection.<br>Infotype detection. <br>Pixel data modify.|
 
 ## Todo for De-id By Dicom Tags or VRs:
 * Design configuration structure.
