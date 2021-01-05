@@ -1,4 +1,4 @@
-[[!TOC]]
+[TOC]
 # Overview
 
 [DICOM®](https://www.dicomstandard.org/) — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
@@ -35,6 +35,9 @@ The VR identified "SQ" shall be used for Data Elements with a Value consisting o
 
 ![nesting](nesting.jpg)
 # Study of Google Dicom Anonimizer
+## Overview
+All operations are mixture of rules-based and heuristic methods.
+
 ||[De-id By Dicom Tags](https://cloud.google.com/healthcare/docs/how-tos/dicom-deidentify#de-identifying_dicom_tags)| [De-id By Sensitive Infotype](https://cloud.google.com/healthcare/docs/how-tos/dicom-deidentify#using_infotypes_and_primitive_transformations_with_dicom_tags)| [De-id Burnt-in text](https://cloud.google.com/healthcare/docs/how-tos/dicom-deidentify#redacting_burnt-in_text_from_images)|
 |-----|-----|-----|-----|
 |Description| Redect values by tags. (default or customized )| De-id values by sensitive types.( built-in infotypes or customized) |Recognize Burnt-in text and scan sensitive data to Infotype.|
