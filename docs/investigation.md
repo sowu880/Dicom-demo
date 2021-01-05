@@ -1,4 +1,4 @@
-[TOC]
+[[TOC]]
 # Overview
 
 [DICOM®](https://www.dicomstandard.org/) — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
@@ -23,7 +23,7 @@
 |Data Element Tag|An ordered pair of 16-bit unsigned integers representing the Group Number followed by Element Number.|[All tags](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part06/chapter_6.html)|
 |Value Representation(VR)|Two single byte characters describes the data type and format of that Data Element's Value(s).|[All VRs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_6.2.html)|
 |Value Length|a 16 or 32-bit unsigned integer as the number of bytes (even) that make up the Value. a 32-bit Length Field set to Undefined Length (FFFFFFFFH) for SQ and UN or OW/OB somtimes.|
-|Value Field|An even number of bytes containing the Value(s) of the Data Element. The Value Multiplicity specifies how many Values with this VR can be placed in the Value Field.|[Nesting of Data Sets](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_7.5.html)<br>  [Pixel Data and Overlay Data](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_8.html)<br> [UIDs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_9.html)|
+|Value Field|An even number of bytes containing the Value(s) of the Data Element. The Value Multiplicity specifies how many Values with this VR can be placed in the Value Field.|[Nesting of Data Sets](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_7.5.html), <br>  [Pixel Data and Overlay Data](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_8.html), <br> [UIDs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_9.html)|
 
 ## Nesting of Data Sets
 
