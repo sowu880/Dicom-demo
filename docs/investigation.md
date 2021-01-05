@@ -1,4 +1,4 @@
-![[TOC]]
+[[!TOC]]
 # Overview
 
 [DICOM®](https://www.dicomstandard.org/) — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
