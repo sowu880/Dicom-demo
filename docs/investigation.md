@@ -1,33 +1,33 @@
 
 ## TOC
 
-[Overview](#Overview)
+* [Overview](#Overview)
 
-[Dicom Data Structure](#Dicom-Data-Structure)
+* [Dicom Data Structure](#Dicom-Data-Structure)
 
-&nbsp;&nbsp; [Basic Structure](#Basic-Structure)
+  * [Basic Structure](#Basic-Structure)
 
-&nbsp;&nbsp; [Nesting Structure](#Nesting-Structure)
+  * [Nesting Structure](#Nesting-Structure)
 
-[Study of Google Dicom Anonimizer](#Study-of-Google-Dicom-Anonimizer)
+* [Study of Google Dicom Anonimizer](#Study-of-Google-Dicom-Anonimizer)
 
-&nbsp;&nbsp; [Overview](#Overview)
+  * [Overview](#Overview)
 
-&nbsp;&nbsp; [De-id By Dicom Tags](#De-id-By-Dicom-Tags)
+  * [De-id By Dicom Tags](#De-id-By-Dicom-Tags)
 
-&nbsp;&nbsp; [De-id By Sensitive Infotype](#De-id-By-Sensitive-Infotype)
+  * [De-id By Sensitive Infotype](#De-id-By-Sensitive-Infotype)
 
-&nbsp;&nbsp; [De-id Burnt-in Text From Images](#De-id-Burnt-in-Text-From-Images)
+  * [De-id Burnt-in Text From Images](#De-id-Burnt-in-Text-From-Images)
 
-[Candidate Features for us](#Candidate-Features-for-us)
+* [Candidate Features for us](#Candidate-Features-for-us)
 
-&nbsp;&nbsp; [Todo For De-id By Dicom Tags or VRs](#Todo-for-De-id-By-Dicom-Tags-or-VRs)
+  * [Todo For De-id By Dicom Tags or VRs](#Todo-for-De-id-By-Dicom-Tags-or-VRs)
 
-&nbsp;&nbsp; [Todo For De-id By Sensitive Infotype](#Todo-for-De-id-By-Sensitive-Infotype)
+  * [Todo For De-id By Sensitive Infotype](#Todo-for-De-id-By-Sensitive-Infotype)
 
-&nbsp;&nbsp; [Todo For De-id Burnt-in Text](#Todo-For-De-id-Burnt-in-Text)
+  * [Todo For De-id Burnt-in Text](#Todo-For-De-id-Burnt-in-Text)
 
-[Useful Links](#Useful-Links)
+* [Useful Links](#Useful-Links)
 
 # Overview
 
