@@ -1,13 +1,40 @@
 
+## TOC
 
-[[_TOC_]]
+[Overview](#Overview)
+
+[Dicom Data Structure](#Dicom-Data-Structure)
+
+&nbsp;&nbsp; [Basic Structure](#Basic-Structure)
+
+&nbsp;&nbsp; [Nesting Structure](#Nesting-Structure)
+
+[Study of Google Dicom Anonimizer](#Study-of-Google-Dicom-Anonimizer)
+
+&nbsp;&nbsp; [Overview](#Overview)
+
+&nbsp;&nbsp; [De-id By Dicom Tags](#De-id-By-Dicom-Tags)
+
+&nbsp;&nbsp; [De-id By Sensitive Infotype](#De-id-By-Sensitive-Infotype)
+
+&nbsp;&nbsp; [De-id Burnt-in Text From Images](#De-id-Burnt-in-Text-From-Images)
+
+[Candidate Features for us](#Candidate-Features-for-us)
+
+&nbsp;&nbsp; [Todo For De-id By Dicom Tags or VRs](#Todo-for-De-id-By-Dicom-Tags-or-VRs)
+
+&nbsp;&nbsp; [Todo For De-id By Sensitive Infotype](#Todo-for-De-id-By-Sensitive-Infotype)
+
+&nbsp;&nbsp; [Todo For De-id Burnt-in Text](#Todo-For-De-id-Burnt-in-Text)
+
+[Useful Links](#Useful-Links)
 
 # Overview
 
 [DICOM®](https://www.dicomstandard.org/) — Digital Imaging and Communications in Medicine — is the international standard for medical images and related information. It defines the formats for medical images that can be exchanged with the data and quality necessary for clinical use.
 
 # Dicom Data Structure
-
+## Basic Structure
 1. DICOM groups information into data sets. Data Set is that portion of a DICOM Message that conveys information about real world objects being managed over the network.
 
 2. A Data Set is constructed of Data Elements. Data Elements contain the encoded Values of Attributes of that object. A DICOM data object consists of a number of attributes, including items also one special attribute containing the image pixel data 
@@ -28,7 +55,7 @@
 |Value Length|a 16 or 32-bit unsigned integer as the number of bytes (even) that make up the Value. a 32-bit Length Field set to Undefined Length (FFFFFFFFH) for SQ and UN or OW/OB somtimes.|
 |Value Field|An even number of bytes containing the Value(s) of the Data Element. The Value Multiplicity specifies how many Values with this VR can be placed in the Value Field.|[Nesting of Data Sets](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/sect_7.5.html), <br>  [Pixel Data and Overlay Data](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_8.html), <br> [UIDs](http://dicom.nema.org/medical/Dicom/2017e/output/chtml/part05/chapter_9.html)|
 
-## Nesting of Data Sets
+## Nesting Structure
 
 The VR identified "SQ" shall be used for Data Elements with a Value consisting of a Sequence of zero or more Items, where each Item contains a set of Data Elements. SQ Data Elements can also be used recursively to contain multi-level nested structures.
 
@@ -128,7 +155,7 @@ A tag filter profile is a pre-defined profile that determines which tags to keep
  [Primitive transformations]() are rules that could be used for transforming an input value, including Redact, CharacterMask, Datashift, CryptoHash and ReplaceWithInfoType. 
 
   InfoTypes and primitive transformations are specified within an [InfoTypeTransformation](https://cloud.google.com/healthcare/docs/reference/rest/v1/DeidentifyConfig#infotypetransformation), which is an object inside of TextConfig. Specifying an infoType is optional. If you do not specify at least one infoType, the transformation applies to the [default DICOM infoTypes](https://cloud.google.com/healthcare/docs/how-tos/dicom-deidentify#default_dicom_infotypes) found in the Cloud Healthcare API.
-## Redacting burnt-in text from images
+## De-id Burnt-in Text From Images
 ```
 'config': {
         'dicom': {},
@@ -151,7 +178,7 @@ A tag filter profile is a pre-defined profile that determines which tags to keep
 |De-id method|redact/ dateshift/ cryptohash/ perturb/ encrypt/ substitute/ generalize|redact/ dateshift/ cryptohash/ perturb/ encrypt/ substitute/ generalize| opaque rectangle|
 |Algorithm|De-id algorithm|Infotype Detection. <br>De-id algorithm|Burnt-in text detection.<br>Infotype detection. <br>Pixel data modify.|
 
-## Todo for De-id By Dicom Tags or VRs:
+## Todo For De-id By Dicom Tags or VRs
 * Design configuration structure.
 * Complete default configuration.
 * Core De-id methods. 
@@ -178,14 +205,14 @@ A tag filter profile is a pre-defined profile that determines which tags to keep
 }
 ```
 
-## Todo for De-id By Sensitive Infotype:
+## Todo For De-id By Sensitive Infotype
 
 * Design sensitive infotype.
 * Design infotype detectors.
 * Recognize sensitive data by infotype and de-id.
 * Support customize infotype and detector.
 
-## Todo for De-id Burnt-in text:
+## Todo For De-id Burnt-in Text
 
 * Regonize text in image.
 * Recognize sensitive data by infotype and de-id.
