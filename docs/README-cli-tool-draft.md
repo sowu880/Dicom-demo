@@ -43,7 +43,7 @@ The command-line tool can be used to anonymize one DICOM file or a folder contai
 | -I | inputFolder | Optional|  | Input folder. |
 | -O | outputFolder | Optional |  | Output folder. |
 | -v | autoValidate | Optional | true | Auto validate output value when anonymizing. |
-| -s | skipFailedItem | Optional | true | Skip failed items when anonymizing and maintain the original value. |
+| -s | skipFailedItem | Optional | true | Skip failed DICOM files when anonymizing. |
 | --validateInput | validateInput | Optional | false | Validate input DICOM file against value multiplicity, value types and format in DICOM specification. |
 
 >Note: To anonymize one DICOM file, inputFile and outputFile are required. To anonymize a DICOM folder, inputFolder and outputFolder are required.
