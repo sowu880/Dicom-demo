@@ -188,7 +188,7 @@ With this method, the input date/dateTime/ value will be shifted within a specif
 |----|----|--|--|--|
 |dateShiftRange| A non-negative value representing the dateshift range.|positive integer|False|100|
 |dateShiftKey|Key used to generate shift days.|string|False|A randomly generated string will be used as default key|
-|dateShiftScope|Scopes that share the same date shift key prefix and will be shift with the same days. |SeriesInstance, StudyInstance, SOPInstance. |False|SeriesInstance|
+|dateShiftScope|Scopes that share the same date shift key prefix and will be shift with the same days. |SeriesInstance, StudyInstance, SOPInstance. |False|SOPInstance|
 
 Here is a sample rule using dateShift method on DICOM tags with VR in DA. The dateShift setting is given in _defaultSettings_ field:
 ```
